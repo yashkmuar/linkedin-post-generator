@@ -17,10 +17,17 @@ class PostService:
 
     def generate_post(
             self,
-            topic: str
+            topic: str,
+            tone: str,
+            audience: str,
+            length: str
     ) -> str:
         
-        prompt = LINKEDIN_POST_PROMPT.format(topic = topic)
+        prompt = LINKEDIN_POST_PROMPT.format(
+            topic = topic,
+            tone = tone,
+            audience = audience,
+            Length = length)
 
         response = self.llm.invoke(
             prompt
