@@ -27,7 +27,7 @@ class PostService:
             topic = topic,
             tone = tone,
             audience = audience,
-            Length = length)
+            length = length)
 
         response = self.llm.invoke(
             prompt
