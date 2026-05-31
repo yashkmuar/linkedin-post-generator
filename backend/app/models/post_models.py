@@ -8,11 +8,16 @@ class ToneEnum(str, Enum):
     CORPORATE="Corporate"
     MOTIVATIONAL="Motivational" 
 
+class LengthEnum(str, Enum):
+    SHORT = "Short"
+    MEDIUM = "Medium"
+    LONG = "Long"
+
 class PostGeneratorRequest(BaseModel):
     topic: str
-    tone: str
+    tone: ToneEnum
     audience: str
-    length: str
+    length: LengthEnum
 
 class PostGeneratorResponse(BaseModel):
     post: str
