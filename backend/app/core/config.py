@@ -13,5 +13,9 @@ class Settings:
         "AZURE_OPENAI_ENDPOINT"
     )
 
+    AZURE_OPENAI_DEPLOYMENT = os.getenv(
+        "AZURE_OPENAI_DEPLOYMENT"
+    )
+
 
 settings = Settings()

@@ -48,3 +48,6 @@ backend/venv/
 __pycache__/
 *.pyc
 .env
+
+#Python Prompts
+backend/app/prompts/*.py
