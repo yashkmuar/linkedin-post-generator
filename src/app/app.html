@@ -36,18 +36,64 @@
 
     <br><br>
 
-    <button>
+    <button (click)="generatePost()">
       Generate Post
     </button>
 
     <br><br>
 
-    <textarea 
+
+    <h2>Generated Post</h2>
+
+<div
+  style="
+    border: 2px solid red;
+    padding: 20px;
+    white-space: pre-wrap;
+    min-height: 300px;
+    width: 900px;
+  "
+>
+  {{ generatedPost }}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <textarea 
       rows="15"
       cols="80"
-      [value]="generatedPost">
+      [(ngModel)]="generatedPost">
     </textarea>
+    <p>{{generatedPost}}</p> -->
 
-    
+    <!-- <div style="
+    border:1px solid black;
+    min-height:300px;
+    width:800px;
+    padding:20px;
+    white-space: pre-wrap;">
+    {{generatedPost}}
+    </div> -->
+
 
 </div>

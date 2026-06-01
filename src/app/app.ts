@@ -6,7 +6,7 @@ import { Post } from './services/post';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,
+  imports: [
     FormsModule
   ],
   templateUrl: './app.html',
@@ -19,8 +19,8 @@ export class App {
   topic = '';
   audience = '';
 
-  tone = '';
-  length = '';
+  tone = 'Professional';
+  length = 'Medium';
 
   generatedPost = '';
 
@@ -32,7 +32,11 @@ export class App {
       audience: this.audience,
       length: this.length
     }).subscribe(response => {
+      console.log('API Response;', response);
+
       this.generatedPost = response.post;
+
+      console.log('generatedPost:', this.generatedPost);
     });
   }
 
