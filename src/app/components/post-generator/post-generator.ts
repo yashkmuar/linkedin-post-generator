@@ -1,11 +1,12 @@
 import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Post } from '../../services/post';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-post-generator',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MatCardModule],
   templateUrl: './post-generator.html',
   styleUrl: './post-generator.css',
 })

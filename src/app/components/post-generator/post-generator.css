@@ -1,5 +1,20 @@
 .page-container {
-    width: 100px;
+    max-width: 1000px;
     margin: 40px auto;
+    padding: 20px;
 }
 
+.result-card {
+    margin-top: 20px;
+    padding: 24px;
+    min-height: 300px;
+
+    width: 100%;
+
+    white-space: pre-wrap;
+
+    background: #1e293b;
+    color: white;
+
+    border-radius: 20px;
+}
