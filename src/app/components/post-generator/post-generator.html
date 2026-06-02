@@ -37,14 +37,24 @@
 
 <h2>Generated Post</h2>
 
-<button (click)="generatePost()">Generate Post</button>
+<button (click)="generatePost()"
+    [disabled]="isLoading">
+    {{ isLoading ? 'Generating...' : 'Generate Post' }}</button>
+
+@if (isLoading) {
+    <h3>🚀 AI is generating your LinkedIn post...</h3>
+}
 
 <div
-    style="
+  style="
     border: 2px solid red;
     padding: 20px;
     white-space: pre-wrap;
     min-height: 300px;
-    width: 900px">
-    {{ generatedPost }}    
+    width: 900px;
+    overflow-y: auto;">
+    
+    {{ generatedPost }}
+
 </div>
+
