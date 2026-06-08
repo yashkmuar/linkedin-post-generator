@@ -2,11 +2,16 @@ import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Post } from '../../services/post';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { observable } from 'rxjs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-post-generator',
   standalone: true,
-  imports: [FormsModule, MatCardModule],
+  imports: [FormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule],
   templateUrl: './post-generator.html',
   styleUrl: './post-generator.css',
 })

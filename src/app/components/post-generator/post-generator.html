@@ -3,45 +3,62 @@
 <h1>LinkedIn Post Generator</h1>
 
 <br>
+<mat-card class="form-card">
 
-<input
-    type="text"
-    placeholder="Topic"
-    [(ngModel)]="topic" />
-
-    <br><br>
-
-<input
-    type="text"
-    placeholder="Audience"
-    [(ngModel)]="audience" />
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Topic</mat-label>
+    <input matInput placeholder="Topic" [(ngModel)]="topic" />
+</mat-form-field>
 
     <br><br>
 
-<select [(ngModel)]="tone">
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Audience</mat-label>
+    <input matInput placeholder="Audience" [(ngModel)]="audience" />
+</mat-form-field>
+
+    <br><br>
+
+
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Tone</mat-label>
+    <mat-select [(ngModel)]="tone">
+        <mat-option value="Professional">Professional</mat-option>
+        <mat-option value="Gen-Z">Gen-Z</mat-option>
+        <mat-option value="Founder">Founder</mat-option>
+        <mat-option value="Corporate">Corporate</mat-option>
+        <mat-option value="Motivational">Motivational</mat-option>
+    </mat-select>
+</mat-form-field>
+<!-- <select [(ngModel)]="tone">
     <option>Professional</option>
     <option>Gen-Z</option>
     <option>Founder</option>
     <option>Corporate</option>
     <option>Motivational</option>
-</select>
+</select> -->
 
     <br><br>
 
 
-<select [(ngModel)]="length">
-    <option>Short</option>
-    <option>Medium</option>
-    <option>Long</option>
-</select>
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Length</mat-label>
+    <mat-select [(ngModel)]="length">
+        <mat-option value="Short">Short</mat-option>
+        <mat-option value="Medium">Medium</mat-option>
+        <mat-option value="Long">Long</mat-option>
+    </mat-select>
+</mat-form-field>
 
     <br><br>
 
 <h2>Generated Post</h2>
 
-<button (click)="generatePost()"
+<button mat-raised-button color="primary" class="generate-btn" (click)="generatePost()"
     [disabled]="isLoading">
     {{ isLoading ? 'Generating...' : 'Generate Post' }}</button>
+
+</mat-card>
 
 @if (isLoading) {
     <h3>🚀 AI is generating your LinkedIn post...</h3>
@@ -52,6 +69,15 @@
     {{ generatedPost }}
 
 </mat-card>
+
+<!-- <button
+  mat-stroked-button
+  color="accent"
+  (click)="copyPost()">
+
+  📋 Copy Post
+
+</button> -->
 
 
 </div>
