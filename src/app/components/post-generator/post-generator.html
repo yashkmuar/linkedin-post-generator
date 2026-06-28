@@ -1,0 +1,122 @@
+<span class="brand">
+  🤖 AI Writer
+</span>
+
+<div class="page-container">
+
+<div class="hero">
+
+    <div class="hero-content">
+        <span class="badge">
+            ✨ AI Powered Content Creation
+        </span>
+                    <h1>
+            Create Better
+            LinkedIn Posts
+            </h1>
+             <p>
+            Inspired by the calm focus of Japan's countryside,
+                create thoughtful LinkedIn posts with AI.
+                Write faster, communicate better,
+                and grow your professional presence.
+            </p>
+    </div>
+
+    <div class="hero-image">
+        <img src="Gemini.png" alt="AI">
+    </div>
+</div>
+
+<br>
+<mat-card class="form-card">
+
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Topic</mat-label>
+    <input matInput placeholder="Topic" [(ngModel)]="topic" />
+</mat-form-field>
+
+    <br><br>
+
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Audience</mat-label>
+    <input matInput placeholder="Audience" [(ngModel)]="audience" />
+</mat-form-field>
+
+    <br><br>
+
+
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Tone</mat-label>
+    <mat-select [(ngModel)]="tone">
+        <mat-option value="Professional">Professional</mat-option>
+        <mat-option value="Gen-Z">Gen-Z</mat-option>
+        <mat-option value="Founder">Founder</mat-option>
+        <mat-option value="Corporate">Corporate</mat-option>
+        <mat-option value="Motivational">Motivational</mat-option>
+    </mat-select>
+</mat-form-field>
+<!-- <select [(ngModel)]="tone">
+    <option>Professional</option>
+    <option>Gen-Z</option>
+    <option>Founder</option>
+    <option>Corporate</option>
+    <option>Motivational</option>
+</select> -->
+
+    <br><br>
+
+
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Length</mat-label>
+    <mat-select [(ngModel)]="length">
+        <mat-option value="Short">Short</mat-option>
+        <mat-option value="Medium">Medium</mat-option>
+        <mat-option value="Long">Long</mat-option>
+    </mat-select>
+</mat-form-field>
+
+    <br><br>
+
+
+
+<button mat-raised-button color="primary" class="generate-btn" (click)="generatePost()"
+    [disabled]="isLoading">
+    {{ isLoading ? 'Generating...' : 'Generate Post' }}</button>
+
+</mat-card>
+
+@if (isLoading) {
+    <!-- <h3>🚀 AI is generating your LinkedIn post...</h3> -->
+     <div class="spinner-container">
+        <mat-progress-spinner diameter="50"></mat-progress-spinner>
+        <p>🚀 AI is generating your LinkedIn post...</p>
+     </div>
+}
+
+@if(generatedPost){
+<mat-card class="result-card">
+    <h2>Generated Post</h2>
+
+    <button class="copy-btn" (click)="copyPost()">📋 Copy</button>
+
+
+    <div class="post-content">
+        {{ generatedPost }}
+    </div>
+</mat-card>
+}
+
+<!-- <button
+  mat-stroked-button
+  color="accent"
+  (click)="copyPost()">
+
+  📋 Copy Post
+
+</button> -->
+
+
+</div>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
