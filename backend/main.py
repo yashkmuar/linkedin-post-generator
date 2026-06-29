@@ -12,6 +12,13 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:4200",
         "http://127.0.0.1:4200",
+
+        ## Azure production frontend domains
+
+        "https://yaslinkedpostgenerator.com",
+        "https://www.yaslinkedpostgenerator.com",
+
+        ## Temporary URLs
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -28,4 +35,10 @@ app.include_router(
 def home():
     return {
         "message":"LinkedIn Post Generator API is running!"
+    }
+
+@app.get("/healthz")
+def healthz():
+    return {
+        "status":"ok"
     }
