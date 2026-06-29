@@ -39,13 +39,17 @@ class PostService:
             tone_value = getattr(tone, "value", tone)
             length_value = getattr(length, "value", length)
 
+            print("STEP 1: Strategy agent started.")
             strategy = self.strategy_chain.invoke({
                 "topic": topic,
                 "tone": tone_value,
                 "audience": audience,
                 "length": length_value
             })
+            print("STEP 1: Strategy agent completed")
+            print(strategy)
 
+            print("STEP 2: Writer agent started")
             draft = self.writer_chain.invoke({
                 "topic": topic,
                 "tone": tone_value,
@@ -53,10 +57,15 @@ class PostService:
                 "length":   length_value,
                 "strategy": strategy
             })
+            print("STEP 2: Writer agent complted.")
+            print(draft)
 
+            print("STEP 3: Editor agent started")
             final_post = self.editor_chain.invoke({
                 "draft":draft
             })
+            print("STEP 3: Editor agent complted")
+            print(final_post)
 
             return final_post.strip()
         
@@ -80,5 +89,4 @@ class PostService:
                 status_code=500,
                 detail="Unable to generate Linkedin post."
             )
-        
         
