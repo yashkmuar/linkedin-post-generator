@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { GeneratePostRequest, GeneratePostResponse } from '../models/post.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class Post {
   
   generatePost(payload: GeneratePostRequest): Observable<GeneratePostResponse>{
     return this.http.post<GeneratePostResponse>(
-      'http://127.0.0.1:8000/api/posts/generate',
+      `${environment.apiBaseUrl}/generate`,
       payload
     );
   }
