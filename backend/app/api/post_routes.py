@@ -29,9 +29,9 @@ def generate_post(
     
     generated_post = post_service.generate_post(
         request.topic,
-        request.tone,
+        request.tone.value,
         request.audience,
-        request.length
+        request.length.value
     )
 
     return PostGeneratorResponse(
