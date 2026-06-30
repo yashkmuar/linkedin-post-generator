@@ -12,6 +12,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:4200",
         "http://127.0.0.1:4200",
+        "https://gentle-ocean-0baa5030f.7.azurestaticapps.net/" #static web app url
 
         ## Azure production frontend domains
 
