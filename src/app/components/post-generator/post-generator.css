@@ -260,3 +260,46 @@
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(148, 163, 184, 0.18);
 }
+
+
+/* --- Hero Visual --- */
+
+.hero-visual {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+}
+
+.visual-orbit {
+  position: absolute;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.55);
+  pointer-events: none;
+}
+
+.visual-orbit-one {
+  width: 520px;
+  height: 520px;
+  animation: spin 22s linear infinite;
+}
+
+
+.visual-orbit-two {
+  width: 390px;
+  height: 390px;
+  animation: spinReverse 26s linear infinite;
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
