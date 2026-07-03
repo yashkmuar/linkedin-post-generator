@@ -107,5 +107,11 @@
 }
 
 .nav-cta {
-  
+  height: 42px !important;
+  padding: 0 22px !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #7c3aed, #ec4899) !important;
+  box-shadow: 0 14px 30px rgba(124,58,237,0.28) !important;
 }
