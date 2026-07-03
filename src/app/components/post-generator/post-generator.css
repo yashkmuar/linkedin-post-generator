@@ -303,3 +303,22 @@
     transform: rotate(-360deg);
   }
 }
+
+.hero-image-card {
+  position: relative;
+  z-index: 2;
+  width: min(100%,620px);
+  border-radius: 34px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.34);
+  box-shadow: 0 28px 90px rgba(76,29,149,0.22);
+}
+
+
+.hero-image-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
