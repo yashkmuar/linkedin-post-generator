@@ -82,15 +82,16 @@ export class PostGenerator {
   };
 
   hero = {
-    eyebrow: 'AI-powered LinkedIn writing assistant',
-    titleStart: 'Create better',
-    titleHighlight: 'LinkedIn posts',
-    titleEnd: 'with agentic AI.',
-    subtitle:
-      'Turn rough ideas into polished professional posts using a LangChain-powered strategy, writer, and editor workflow.',
-    primaryCta: 'Start writing',
-    secondaryCta: 'View workflow'
-  };
+  eyebrow: 'AI-powered LinkedIn writing assistant',
+  titleStart: 'Create better',
+  titleHighlight: 'LinkedIn posts',
+  titleEnd: 'with agentic AI.',
+  subtitle:
+    'Turn rough ideas into polished professional posts using a LangChain-powered strategy, writer, and editor workflow.',
+  primaryCta: 'Start writing',
+  secondaryCta: 'View workflow',
+  imageSrc: 'ai-hero-character.png'
+};
 
   navLinks: NavLink[] = [
     {
