@@ -1,85 +1,283 @@
 <div class="premium-page">
 
-    <!--NAVBAR-->
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">✨</span>
+      <span class="brand-text">{{ brand.name }}</span>
+      <span class="brand-badge">{{ brand.badge }}</span>
+    </a>
 
-    <header class="navbar">
-        <a class="brand" href="#">
-            
-            <span class="brand-icon">✨</span>
-            <span class="brand-text">{{ brand.name }}</span>
-            <span class="brand-badge">{{ brand.badge }}</span>
+    <nav class="nav-links">
+      @for (link of navLinks; track link.label) {
+        <a [href]="link.href">{{ link.label }}</a>
+      }
+    </nav>
 
-        </a>
+    <button
+      mat-raised-button
+      class="nav-cta"
+      type="button"
+      (click)="scrollToGenerator()">
+      Try now
+    </button>
+  </header>
 
-        <nav class="nav-links">
-            @for (link of navLinks; track link.label){
-                <a [href]="link.href">{{ link.label }}</a>
-            }
-        </nav>
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">
+        <span class="pulse-dot"></span>
+        {{ hero.eyebrow }}
+      </div>
 
-        <button 
-        mat-raised-button
-        class="nav-cta"
-        type="button"
-        (click)="scrollToGenerator()">
-        Try Now
+      <h1>
+        {{ hero.titleStart }}
+        <span>{{ hero.titleHighlight }}</span>
+        {{ hero.titleEnd }}
+      </h1>
+
+      <p class="hero-subtitle">
+        {{ hero.subtitle }}
+      </p>
+
+      <div class="hero-actions">
+        <button
+          mat-raised-button
+          class="primary-btn"
+          type="button"
+          (click)="scrollToGenerator()">
+          {{ hero.primaryCta }}
         </button>
-        
-    </header>
 
-    <!--HERO SECTION-->
-    <section class="hero-section">
-        <div class="hero-copy">
-            <div class="hero-eyebrow">
-                <span class="pulse-dot"></span>
-                {{ hero.eyebrow }}
-            </div>
+        <a class="secondary-btn" href="#">
+          {{ hero.secondaryCta }}
+        </a>
+      </div>
 
-            <h1>
-                {{ hero.titleStart }}
-                <span>{{ hero.titleHighlight }}</span>
-                {{ hero.titleEnd }}
-            </h1>
+      <div class="tech-strip" id="stack">
+        @for (tech of techStack; track tech) {
+          <span>{{ tech }}</span>
+        }
+      </div>
+    </div>
 
-            <p class="hero-subtitle">
-                {{ hero.subtitle }}
-            </p>
+    <div class="hero-visual">
+      <div class="visual-orbit visual-orbit-one"></div>
+      <div class="visual-orbit visual-orbit-two"></div>
 
-            <div class="hero-actions">
-                <button
-                mat-raised-button
-                class="primary-btn"
+      <div class="hero-image-card">
+        <img
+          [src]="hero.imageSrc"
+          alt="AI content assistant visual" />
+      </div>
+
+      <div class="floating-card floating-card-top">
+        <span class="floating-label">{{ floatingCards[0].label }}</span>
+        <strong>{{ floatingCards[0].value }}</strong>
+      </div>
+
+      <div class="floating-card floating-card-middle">
+        <span class="floating-label">{{ floatingCards[1].label }}</span>
+        <strong>{{ floatingCards[1].value }}</strong>
+      </div>
+
+      <div class="floating-card floating-card-bottom">
+        <span class="floating-label">{{ floatingCards[2].label }}</span>
+        <strong>{{ floatingCards[2].value }}</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW SECTION -->
+  <section class="workflow-section" id="workflow">
+    <div class="section-heading">
+      <span>Agentic workflow</span>
+      <h2>Not just a prompt. A writing pipeline.</h2>
+      <p>
+        Your backend already runs a LangChain-powered flow that plans, writes,
+        and edits before returning the final LinkedIn post.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      @for (feature of features; track feature.title) {
+        <article class="feature-card">
+          <div class="feature-icon">{{ feature.icon }}</div>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- GENERATOR SECTION -->
+  <section class="generator-section" id="generator">
+    <div class="generator-shell">
+
+      <!-- LEFT PANEL: FORM -->
+      <mat-card class="generator-card input-card">
+        <div class="card-kicker">AI generator</div>
+
+        <div class="card-heading">
+          <h2>Craft your LinkedIn post</h2>
+          <p>
+            Give the AI a direction. The agentic workflow will plan, write,
+            and polish the final post.
+          </p>
+        </div>
+
+        <div class="sample-topics">
+          <span>Try a sample:</span>
+
+          <div class="sample-chip-list">
+            @for (sample of sampleTopics; track sample) {
+              <button
                 type="button"
-                (click)="scrollToGenerator()">
-                {{ hero.primaryCta }}    
-            </button>
+                class="sample-chip"
+                (click)="useSampleTopic(sample)">
+                {{ sample }}
+              </button>
+            }
+          </div>
+        </div>
 
-            <a class="secondary-btn" href="#">
-                {{ hero.secondaryCta }}
-            </a>
-            </div>
+        <form class="generator-form">
 
-            <div class="tech-strip" id="stack">
-                @for (tech of techStack; track tech){
-                    <span>{{ tech }}</span>
+          @for (field of generatorFields; track field.key) {
+
+            @if (field.type === 'textarea') {
+              <mat-form-field appearance="outline" class="form-field full-width">
+                <mat-label>{{ field.label }}</mat-label>
+
+                <textarea
+                  matInput
+                  rows="4"
+                  [placeholder]="field.placeholder || ''"
+                  [maxlength]="field.maxLength || null"
+                  [ngModel]="getFieldValue(field.key)"
+                  (ngModelChange)="setFieldValue(field.key, $event)"
+                  [name]="field.key">
+                </textarea>
+
+                @if (field.maxLength) {
+                  <mat-hint align="end">
+                    {{ getFieldValue(field.key).length }}/{{ field.maxLength }}
+                  </mat-hint>
                 }
-            </div>
+              </mat-form-field>
+            }
+
+            @if (field.type === 'text') {
+              <mat-form-field appearance="outline" class="form-field full-width">
+                <mat-label>{{ field.label }}</mat-label>
+
+                <input
+                  matInput
+                  [placeholder]="field.placeholder || ''"
+                  [maxlength]="field.maxLength || null"
+                  [ngModel]="getFieldValue(field.key)"
+                  (ngModelChange)="setFieldValue(field.key, $event)"
+                  [name]="field.key" />
+
+                @if (field.maxLength) {
+                  <mat-hint align="end">
+                    {{ getFieldValue(field.key).length }}/{{ field.maxLength }}
+                  </mat-hint>
+                }
+              </mat-form-field>
+            }
+
+            @if (field.type === 'select') {
+              <mat-form-field appearance="outline" class="form-field full-width">
+                <mat-label>{{ field.label }}</mat-label>
+
+                <mat-select
+                  [ngModel]="getFieldValue(field.key)"
+                  (ngModelChange)="setFieldValue(field.key, $event)"
+                  [name]="field.key">
+
+                  @for (option of field.options || []; track option) {
+                    <mat-option [value]="option">
+                      {{ option }}
+                    </mat-option>
+                  }
+
+                </mat-select>
+              </mat-form-field>
+            }
+
+          }
+
+          <button
+            mat-raised-button
+            class="generate-btn"
+            type="button"
+            [disabled]="isLoading"
+            (click)="generatePost()">
+
+            @if (isLoading) {
+              <span class="btn-loading">
+                <mat-progress-spinner
+                  mode="indeterminate"
+                  diameter="18">
+                </mat-progress-spinner>
+                Generating...
+              </span>
+            } @else {
+              <span>Generate premium post</span>
+            }
+
+          </button>
+
+        </form>
+      </mat-card>
+
+      <!-- RIGHT PANEL: RESULT -->
+      <mat-card class="generator-card output-card">
+        <div class="result-topbar">
+          <div>
+            <div class="card-kicker">Live preview</div>
+            <h2>Generated post</h2>
+          </div>
+
+          <button
+            mat-raised-button
+            class="copy-btn"
+            type="button"
+            [disabled]="!generatedPost || isLoading"
+            (click)="copyPost()">
+            Copy
+          </button>
         </div>
 
-        <div class="hero-visual">
-            <div class="visual-orbit visual-orbit-one"></div>
-            <div class="visual-orbit visual-orbit-two"></div>
+        @if (isLoading) {
+          <div class="loading-state">
+            <div class="loading-orb"></div>
+            <h3>Agents are working...</h3>
+            <p>Planning angle, drafting content, and polishing the final version.</p>
+          </div>
+        }
 
-            <div class="hero-image-card">
-                <img 
-                [src]="hero.imageSrc"
-                alt="AI content assistant visual" />
-            </div>
+        @if (!isLoading && !generatedPost) {
+          <div class="empty-state">
+            <div class="empty-icon">📝</div>
+            <h3>Your post will appear here</h3>
+            <p>
+              Fill the form and generate a LinkedIn-ready post crafted by your AI workflow.
+            </p>
+          </div>
+        }
 
-            <div class="floating-card floating-card-top">
-                <span class="floating-label">{{ floatingCards[0].label}}</span>
-                <strong>{{ floatingCards[0].value}}</strong>
-            </div>
-        </div>
-    </section>
+        @if (!isLoading && generatedPost) {
+          <div class="post-preview">
+            {{ generatedPost }}
+          </div>
+        }
+
+      </mat-card>
+
+    </div>
+  </section>
+
 </div>
