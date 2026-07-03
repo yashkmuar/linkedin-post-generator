@@ -38,4 +38,29 @@
   z-index: 1;
 }
 
-/* -- Navigation Bar -- /*
+/* -- Navigation Bar -- */
+
+.navbar {
+  max-width: 1180px;
+  margin: 0 auto 36px;
+  height: 72px;
+  padding: 0 20px;
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 24px;
+  background: rgba(255,255,255,0.62);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 18px 60px rgba(80,61,149,0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  text-decoration: none;
+  color: #111827;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
