@@ -565,3 +565,18 @@
   --mdc-outlined-text-field-container-shape: 18px;
 }
 
+
+.generate-btn {
+  height: 56px !important;
+  margin-top: 2px;
+  border-radius: 18px !important;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, #7c3aed, #ec4899, #06b6d4) !important;
+  box-shadow: 0 20px 46px rgba(124, 58, 237, 0.28) !important;
+}
+
+.generate-btn:disabled {
+  opacity: 0.64;
+}
