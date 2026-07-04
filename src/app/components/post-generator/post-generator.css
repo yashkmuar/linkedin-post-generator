@@ -411,6 +411,20 @@
   color: #64748b;
 }
 
+.agent-visual-wrap {
+  width: min(100%, 520px);
+  margin: 0 auto 28px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(76, 29, 149, 0.14);
+}
+
+.agent-visual-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
