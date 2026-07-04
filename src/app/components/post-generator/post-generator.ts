@@ -10,34 +10,22 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-type FieldType = 'text' | 'textarea' | 'select';
+import { GeneratorField } from './post-generator.model';
 
-interface GeneratorField {
-  key: 'topic' | 'audience' | 'tone' | 'length';
-  label: string;
-  type: FieldType;
-  placeholder?: string;
-  required?: boolean;
-  maxLength?: number;
-  options?: string[];
-}
+import { 
+BRAND_CONFIG,
+  FEATURES,
+  FLOATING_CARDS,
+  GENERATOR_FIELDS,
+  HERO_CONFIG,
+  LENGTH_OPTIONS,
+  NAV_LINKS,
+  SAMPLE_TOPICS,
+  TECH_STACK,
+  TONE_OPTIONS,
+  VISUAL_ASSETS
+} from './post-generator.config'
 
-interface NavLink {
-  label: string;
-  href: string;
-}
-
-interface FeatureCard {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface FloatingCard {
-  label: string;
-  value: string;
-  accent: 'violet' | 'pink' | 'cyan' | 'orange';
-}
 
 @Component({
   selector: 'app-post-generator',
@@ -76,139 +64,26 @@ export class PostGenerator {
   // Keep content here, not hardcoded in HTML
   // -----------------------------
 
-  brand = {
-    name: 'PostCraft AI',
-    badge: 'AI LinkedIn Writer'
-  };
+  brand = BRAND_CONFIG;
 
-  hero = {
-  eyebrow: 'AI-powered LinkedIn writing assistant',
-  titleStart: 'Create better',
-  titleHighlight: 'LinkedIn posts',
-  titleEnd: 'with agentic AI.',
-  subtitle:
-    'Turn rough ideas into polished professional posts using a LangChain-powered strategy, writer, and editor workflow.',
-  primaryCta: 'Start writing',
-  secondaryCta: 'View workflow',
-  imageSrc: '/images/ai-hero-character.png'
-};
+  hero = HERO_CONFIG;
 
-  visualAssets = {
-    heroImage: '/images/ai-hero-character.png',
-    dashboardPreview: '/images/post-preview-dashboard.png',
-    agentCards: '/images/agent-cards-cluster.png',
-    heroBackground: '/images/hero-gradient-bg.png'
-  };
+  visualAssets = VISUAL_ASSETS;
 
-  navLinks: NavLink[] = [
-    {
-      label: 'How it works',
-      href: '#workflow'
-    },
-    {
-      label: 'Generator',
-      href: '#generator'
-    },
-    {
-      label: 'Tech stack',
-      href: '#stack'
-    }
-  ];
+  navLinks = NAV_LINKS;
+  toneOptions = TONE_OPTIONS;
 
-  toneOptions: string[] = [
-    'Professional',
-    'Gen-Z',
-    'Founder',
-    'Corporate',
-    'Motivational'
-  ];
+  lengthOptions = LENGTH_OPTIONS;
 
-  lengthOptions: string[] = [
-    'Short',
-    'Medium',
-    'Long'
-  ];
+  generatorFields = GENERATOR_FIELDS;
 
-  generatorFields: GeneratorField[] = [
-    {
-      key: 'topic',
-      label: 'Topic',
-      type: 'textarea',
-      placeholder: 'Example: What I learned while deploying a FastAPI app to Azure',
-      required: true,
-      maxLength: 300
-    },
-    {
-      key: 'audience',
-      label: 'Audience',
-      type: 'text',
-      placeholder: 'Example: Software developers, cloud engineers, students',
-      required: true,
-      maxLength: 140
-    },
-    {
-      key: 'tone',
-      label: 'Tone',
-      type: 'select',
-      options: this.toneOptions
-    },
-    {
-      key: 'length',
-      label: 'Length',
-      type: 'select',
-      options: this.lengthOptions
-    }
-  ];
+  sampleTopics = SAMPLE_TOPICS;
 
-  sampleTopics: string[] = [
-    'What I learned while deploying a FastAPI app to Azure',
-    'How LangChain improved my AI project workflow',
-    'Lessons from building a full-stack AI portfolio project'
-  ];
+  features = FEATURES;
 
-  features: FeatureCard[] = [
-    {
-      icon: '🧠',
-      title: 'Strategy Agent',
-      description: 'Plans the angle, hook, structure, and CTA before writing.'
-    },
-    {
-      icon: '✍️',
-      title: 'Writer Agent',
-      description: 'Turns your idea into a structured LinkedIn draft.'
-    },
-    {
-      icon: '✨',
-      title: 'Editor Agent',
-      description: 'Polishes clarity, flow, readability, and engagement.'
-    }
-  ];
+  techStack = TECH_STACK;
 
-  techStack: string[] = [
-    'Angular',
-    'FastAPI',
-    'LangChain',
-    'Azure OpenAI',
-    'Azure Container Apps'
-  ];
-
-  floatingCards: FloatingCard[] = [
-    {
-      label: 'Agent flow',
-      value: '3-step generation',
-      accent: 'violet'
-    },
-    {
-      label: 'Output',
-      value: 'LinkedIn-ready post',
-      accent: 'pink'
-    },
-    {
-      label: 'Cloud',
-      value: 'Deployed on Azure',
-      accent: 'cyan'
-    }
-  ];
+  floatingCards = FLOATING_CARDS;
 
   // -----------------------------
   // Helper methods for dynamic form
