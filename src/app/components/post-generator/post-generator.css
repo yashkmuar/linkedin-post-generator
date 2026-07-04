@@ -631,3 +631,34 @@
   box-shadow: none !important;
 }
 
+.loading-state,
+.empty-state {
+  flex: 1;
+  min-height: 360px;
+  border-radius: 26px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 32px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.06), rgba(6,182,212,0.06));
+  border: 1px dashed rgba(124,58,237,0.18);
+}
+
+
+.loading-state h3,
+.empty-state h3 {
+  margin: 14px 0 8px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #111827;
+}
+
+.loading-state p,
+.empty-state p {
+  margin: 0;
+  max-width: 380px;
+  color: #64748b;
+  line-height: 1.65;
+}
+
