@@ -121,19 +121,20 @@
 .hero-section {
   max-width: 1180px;
   margin: 0 auto;
-  min-height: 650px;
-  padding: 54px 60px 44px;
+  min-height: 690px;
+  padding: 58px 64px 50px;
   border-radius: 42px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.74),rgba(255,255,255,0.42));
+  background: linear-gradient(135deg, rgba(255,255,255,0.78),rgba(255,255,255,0.46));
   border: 1px solid rgba(255,255,255,0.72);
-  box-shadow: 0 35px 100px rgba(76,29,149,0.16);
+  box-shadow: 0 38px 110px rgba(76,29,149,0.18);
   backdrop-filter: blur(26px);
   -webkit-backdrop-filter: blur(26px);
 
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 42px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 36px;
   align-items: center;
+  overflow: hidden;
 }
 
 .hero-copy {
@@ -307,18 +308,22 @@
 .hero-image-card {
   position: relative;
   z-index: 2;
-  width: min(100%,620px);
+  width: min(108%,690px);
+  height: 470px;
   border-radius: 34px;
   overflow: hidden;
   background: rgba(255,255,255,0.34);
-  box-shadow: 0 28px 90px rgba(76,29,149,0.22);
+  box-shadow: 0 28px 90px rgba(76,29,149,0.26);
+  transform: translateX(18px);
 }
 
 
 .hero-image-card img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: 64% center;
 }
 
 .floating-card {
