@@ -551,3 +551,17 @@
   background: rgba(124, 58, 237, 0.14);
 }
 
+.generator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-field {
+  --mdc-outlined-text-field-container-shape: 18px;
+}
+
