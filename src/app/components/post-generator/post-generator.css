@@ -270,6 +270,7 @@
   min-height: 520px;
   display: grid;
   place-items: center;
+  isolation: isolate;
 }
 
 .visual-orbit {
@@ -308,66 +309,94 @@
 .hero-image-card {
   position: relative;
   z-index: 2;
-  width: min(108%,690px);
-  height: 470px;
-  border-radius: 34px;
+  width: min(112%, 720px);
+  height: 485px;
+  border-radius: 36px;
   overflow: hidden;
-  background: rgba(255,255,255,0.34);
-  box-shadow: 0 28px 90px rgba(76,29,149,0.26);
-  transform: translateX(18px);
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 34px 110px rgba(76, 29, 149, 0.24);
+  transform: translateX(30px);
 }
-
 
 .hero-image-card img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 64% center;
+  object-position: 70% center;
 }
 
 .floating-card {
   position: absolute;
-  z-index: 4;
-  min-width: 170px;
-  padding: 16px 18px;
-  border-radius: 22px;
-  background: rgba(255,255,255,0.76);
-  border: 1px solid rgba(255,255,255,0.82);
-  box-shadow: 0 20px 60px rgba(76,29,149,0.14);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  z-index: 5;
+  min-width: 155px;
+  padding: 13px 15px;
+  border-radius: 20px;
+
+  /* more transparent glass */
+  background: rgba(255, 255, 255, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow:
+    0 18px 50px rgba(76, 29, 149, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+
+  pointer-events: none;
 }
+
 
 .floating-label {
   display: block;
   margin-bottom: 5px;
-  color: #64748b;
-  font-size: 12px;
-  font-weight: 800;
+  color: rgba(71, 85, 105, 0.86);
+  font-size: 11px;
+  font-weight: 850;
 }
 
-
 .floating-card strong {
-  color: #111827;
-  font-size: 15px;
+  color: rgba(15, 23, 42, 0.92);
+  font-size: 14px;
   font-weight: 900;
 }
 
 
 .floating-card-top {
-  top: 54px;
-  left: 8px;
+  top: 42px;
+  left: -38px;
 }
 
 .floating-card-middle {
-  top: 222px;
-  right: -8px;
+  top: 218px;
+  right: -48px;
 }
 
 .floating-card-bottom {
-  bottom: 76px;
-  left: 34px;
+  bottom: 58px;
+  left: -18px;
+}
+
+.floating-card-top {
+  animation: floatSoft 5.5s ease-in-out infinite;
+}
+
+.floating-card-middle {
+  animation: floatSoft 6.2s ease-in-out infinite;
+}
+
+.floating-card-bottom {
+  animation: floatSoft 5.8s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 
