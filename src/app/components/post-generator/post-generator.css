@@ -769,6 +769,17 @@
     min-height: auto;
   }
 
+  .hero-image-card {
+    transform: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-image-card img {
+    height: auto;
+    object-fit: contain;
+  }
+
   .generator-shell {
     grid-template-columns: 1fr;
   }
