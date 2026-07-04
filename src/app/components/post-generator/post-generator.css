@@ -580,3 +580,13 @@
 .generate-btn:disabled {
   opacity: 0.64;
 }
+
+.btn-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-loading mat-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #ffffff;
+}
