@@ -601,3 +601,33 @@
 .btn-loading mat-progress-spinner {
   --mdc-circular-progress-active-indicator-color: #ffffff;
 }
+
+
+/* -- Output -- */
+
+
+.output-card {
+  min-height: 520px;
+  display: flex !important;
+  flex-direction: column;
+}
+
+
+.result-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.copy-btn {
+  height: 42px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  color: #5b21b6 !important;
+  background: rgba(124, 58, 237, 0.09) !important;
+  font-weight: 900 !important;
+  box-shadow: none !important;
+}
+
