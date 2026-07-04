@@ -321,4 +321,47 @@
   height: auto;
 }
 
+.floating-card {
+  position: absolute;
+  z-index: 4;
+  min-width: 170px;
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid rgba(255,255,255,0.82);
+  box-shadow: 0 20px 60px rgba(76,29,149,0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.floating-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+.floating-card strong {
+  color: #111827;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+
+.floating-card-top {
+  top: 54px;
+  left: 8px;
+}
+
+.floating-card-middle {
+  top: 222px;
+  right: -8px;
+}
+
+.floating-card-bottom {
+  bottom: 76px;
+  left: 34px;
+}
 
