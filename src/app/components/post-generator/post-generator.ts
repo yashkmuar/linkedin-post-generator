@@ -90,8 +90,15 @@ export class PostGenerator {
     'Turn rough ideas into polished professional posts using a LangChain-powered strategy, writer, and editor workflow.',
   primaryCta: 'Start writing',
   secondaryCta: 'View workflow',
-  imageSrc: 'ai-hero-character.png'
+  imageSrc: '/images/ai-hero-character.png'
 };
+
+  visualAssets = {
+    heroImage: '/images/ai-hero-character.png',
+    dashboardPreview: '/images/post-preview-dashboard.png',
+    agentCards: '/images/agent-cards-cluster.png',
+    heroBackground: '/images/hero-gradient-bg.png'
+  };
 
   navLinks: NavLink[] = [
     {
