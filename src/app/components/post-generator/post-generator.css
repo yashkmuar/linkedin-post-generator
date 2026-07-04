@@ -456,3 +456,19 @@
   color: #64748b;
   line-height: 1.65;
 }
+
+/*  --- Generator --- */
+
+.generator-section {
+  max-width: 1180px;
+  margin: 64px auto 0;
+  padding-bottom: 70px;
+}
+
+
+.generator-shell {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 22px;
+  align-items: stretch;
+}
