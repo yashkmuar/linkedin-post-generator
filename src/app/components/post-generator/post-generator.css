@@ -482,3 +482,35 @@
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
 }
+
+
+.card-kicker {
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.09);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.09em; 
+}
+
+
+.card-heading h2,
+.result-topbar h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+}
+
+
+.card-heading p {
+  margin: 10px 0 0;
+  color: #64748b;
+  line-height: 1.6;
+}
