@@ -590,3 +590,14 @@
 .btn-loading mat-progress-spinner {
   --mdc-circular-progress-active-indicator-color: #ffffff;
 }
+
+
+.btn-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-loading mat-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #ffffff;
+}
