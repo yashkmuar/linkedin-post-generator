@@ -42,10 +42,6 @@ export const NAV_LINKS: NavLink[] = [
     {
         label: 'Generator',
         href: '#generator'
-    },
-    {
-        label: 'Tech Stack',
-        href: '#stack'
     }
 ];
 
