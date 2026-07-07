@@ -89,38 +89,15 @@
     </div>
   </section>
 
-  <!-- WORKFLOW SECTION -->
-  <section class="workflow-section" id="workflow">
-    <div class="section-heading">
-      <span>Agentic workflow</span>
-      <h2>Not just a prompt. A writing pipeline.</h2>
+   <!-- GENERATOR SECTION -->
+  <section class="generator-section" id="generator">
+    <div class="section-heading generator-heading">
+      <span>Try the product</span>
+      <h2>Generate a polished LinkedIn post in seconds.</h2>
       <p>
-        Your backend already runs a LangChain-powered flow that plans, writes,
-        and edits before returning the final LinkedIn post.
+        Enter your topic, audience, tone, and length. The agentic workflow will plan, write, , and polish the final versions.
       </p>
     </div>
-
-    
-<div class="agent-visual-wrap">
-  <img
-    [src]="visualAssets.agentCards"
-    alt="Agent workflow cards visual" />
-</div>
-
-
-    <div class="feature-grid">
-      @for (feature of features; track feature.title) {
-        <article class="feature-card">
-          <div class="feature-icon">{{ feature.icon }}</div>
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
-        </article>
-      }
-    </div>
-  </section>
-
-  <!-- GENERATOR SECTION -->
-  <section class="generator-section" id="generator">
     <div class="generator-shell">
 
       <!-- LEFT PANEL: FORM -->
@@ -288,4 +265,36 @@
     </div>
   </section>
 
+
+  <!-- WORKFLOW SECTION -->
+  <section class="workflow-section" id="workflow">
+    <div class="section-heading">
+      <span>Agentic workflow</span>
+      <h2>Not just a prompt. A writing pipeline.</h2>
+      <p>
+        Your backend already runs a LangChain-powered flow that plans, writes,
+        and edits before returning the final LinkedIn post.
+      </p>
+    </div>
+
+    
+<div class="agent-visual-wrap">
+  <img
+    [src]="visualAssets.agentCards"
+    alt="Agent workflow cards visual" />
+</div>
+
+
+    <div class="feature-grid">
+      @for (feature of features; track feature.title) {
+        <article class="feature-card">
+          <div class="feature-icon">{{ feature.icon }}</div>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+ 
 </div>
