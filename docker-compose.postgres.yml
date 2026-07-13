@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: linkedin-postgres-local
+
+    environment:
+      POSTGRES_USER: linkedin_user
+      POSTGRES_PASSWORD: linkedin_password
+      POSTGRES_DB: linkedin_post_generator
+
+    ports:
+     - "5432:5432"
+
+    volumes:
+     - postgres_data:/var/lib/postgresql/data
+
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
